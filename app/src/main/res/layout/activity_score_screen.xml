@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9300db"
+    tools:context=".GameScreen"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="18dp">
+
+    <TextView
+        android:id="@+id/congrats"
+        android:layout_width="189dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="119dp"
+        android:rotation="-12"
+        android:rotationY="-8"
+        android:text="congratulations!"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/infoText"
+        app:layout_constraintStart_toStartOf="@+id/angryBird"
+        app:layout_constraintTop_toBottomOf="@+id/angryBird" />
+
+    <ImageView
+        android:id="@+id/angryBird"
+        android:layout_width="181dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/congrats"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/finalbird" />
+
+    <TextView
+        android:id="@+id/infoText"
+        android:layout_width="267dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="93dp"
+        android:text="YOU BEAT THE GAME AT SECONDS"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/restartButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/congrats" />
+
+    <Button
+        android:id="@+id/restartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="161dp"
+        android:onClick="restartGame"
+        android:text="RESTART"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infoText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
