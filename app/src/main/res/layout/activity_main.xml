@@ -162,6 +162,7 @@
         android:fontFamily="cursive"
         android:padding="15dp"
         android:text="START"
+        android:onClick="startGame"
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold" />
@@ -191,7 +192,7 @@
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
         android:src="@drawable/bugra" />
 
 </RelativeLayout>

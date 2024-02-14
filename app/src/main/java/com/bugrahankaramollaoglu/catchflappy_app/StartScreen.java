@@ -23,13 +23,11 @@ public class StartScreen extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ScoreAdapter adapter;
-    private List<Float> scoreList;
+    private List<Integer> scoreList;
 
-    SharedPreferences sharedPreferences;
     Intent intent;
-    int difficulty = 20;
+    int difficulty = 500;
 
-    public Toast lastToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +40,9 @@ public class StartScreen extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycler_view);
         scoreList = new ArrayList<>();
-        scoreList.add(10.0f);
-        scoreList.add(8.5f);
-        scoreList.add(9.5f);
+        scoreList.add(10);
+        scoreList.add(8);
+        scoreList.add(9);
 
         adapter = new ScoreAdapter(scoreList);
 
@@ -64,7 +62,7 @@ public class StartScreen extends AppCompatActivity {
     }
 
     public void setMedium(View view) {
-        difficulty = 400;
+        difficulty = 500;
         mediumButton.setStrokeColor(ContextCompat.getColor(this, R.color.color1));
         mediumButton.setStrokeWidth(10);
         easyButton.setStrokeColor(ContextCompat.getColor(this, R.color.black));
@@ -75,7 +73,7 @@ public class StartScreen extends AppCompatActivity {
     }
 
     public void setHard(View view) {
-        difficulty = 300;
+        difficulty = 400;
         hardButton.setStrokeColor(ContextCompat.getColor(this, R.color.color1));
         hardButton.setStrokeWidth(10);
         easyButton.setStrokeColor(ContextCompat.getColor(this, R.color.black));

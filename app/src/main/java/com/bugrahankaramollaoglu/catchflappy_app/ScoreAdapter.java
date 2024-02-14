@@ -14,14 +14,14 @@ import java.util.List;
 
 public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ScoreViewHolder> {
 
-    private List<Float> scoreList;
+    private List<Integer> scoreList;
 
-    public ScoreAdapter(List<Float> scoreList) {
+    public ScoreAdapter(List<Integer> scoreList) {
         this.scoreList = scoreList;
-        Collections.sort(scoreList, new Comparator<Float>() {
+        Collections.sort(scoreList, new Comparator<Integer>() {
             @Override
-            public int compare(Float o1, Float o2) {
-                return Float.compare(o1, o2);
+            public int compare(Integer o1, Integer o2) {
+                return Integer.compare(o1, o2);
             }
         });
         Collections.reverse(scoreList);
@@ -37,8 +37,7 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ScoreViewHol
 
     @Override
     public void onBindViewHolder(@NonNull ScoreViewHolder holder, int position) {
-        Float score = scoreList.get(position);
-        // Update position indicator (scoreNumberText)
+        Integer score = scoreList.get(position);
         holder.bind(score, position + 1);
     }
 
@@ -58,7 +57,7 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ScoreViewHol
             scoreNumberText = itemView.findViewById(R.id.scoreNumberText);
         }
 
-        public void bind(Float score, int position) {
+        public void bind(Integer score, int position) {
             scoreTextView.setText(String.valueOf(score));
             scoreNumberText.setText(String.valueOf(position));
         }
