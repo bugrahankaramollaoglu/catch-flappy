@@ -2,4 +2,4 @@
 
 a flappy-bird-inspired game I wrote in java
 
-[](https://imgur.com/a/HQR7ILz)
+[gif](https://imgur.com/a/HQR7ILz)
