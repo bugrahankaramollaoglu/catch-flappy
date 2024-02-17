@@ -1,11 +1,16 @@
 package com.bugrahankaramollaoglu.catchflappy_app;
 
+import static com.bugrahankaramollaoglu.catchflappy_app.VibrationHelper.vibrate;
+
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -20,9 +25,17 @@ import java.util.Random;
 public class GameScreen extends AppCompatActivity {
 
     private ActivityGameScreenBinding binding;
+    private SoundPool soundPool;
+    private int soundID;
+
+
+    private String selectedBird = "yellow";
+    private int time = 15;
+    private boolean isVibration = true;
+    private boolean isSound = true;
+    int difficulty = 500;
 
     private ArrayList<ImageView> imageArray = new ArrayList<>();
-    private int difficulty = 0;
     Intent intent;
     private int currentScore = 0;
     private Runnable runnable = () -> {
@@ -36,13 +49,34 @@ public class GameScreen extends AppCompatActivity {
         binding = ActivityGameScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_GAME)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build();
+
+            soundPool = new SoundPool.Builder()
+                    .setMaxStreams(1)
+                    .setAudioAttributes(audioAttributes)
+                    .build();
+        } else {
+            soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
+        }
+        soundID = soundPool.load(this, R.raw.ding, 1);
+
+
         intent = getIntent();
 
         if (intent != null && intent.hasExtra("difficulty-level")) {
             difficulty = intent.getIntExtra("difficulty-level", 500);
+            selectedBird = intent.getStringExtra("chosen-bird");
+            time = intent.getIntExtra("selected-time", 15);
+            isVibration = intent.getBooleanExtra("vibration-status", true);
+            isSound = intent.getBooleanExtra("sound-status", true);
         } else {
             // Handle the case when the "difficulty-level" extra is not found
         }
+
 
         binding.goBackArrow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +85,43 @@ public class GameScreen extends AppCompatActivity {
             }
         });
 
-        Log.d("mesaj", String.valueOf(difficulty));
+        int[] birdImageViews = {R.id.bird1, R.id.bird2, R.id.bird3, R.id.bird4, R.id.bird5, R.id.bird6,
+                R.id.bird7,
+                R.id.bird8,
+                R.id.bird9,
+                R.id.bird10,
+                R.id.bird11,
+                R.id.bird12,
+                R.id.bird13,
+                R.id.bird14,
+                R.id.bird15,
+                R.id.bird16,
+                R.id.bird17,
+                R.id.bird18,
+                R.id.bird19
+        };
+
+        int birdDrawableResource = 0;
+
+        switch (selectedBird) {
+            case "red":
+                birdDrawableResource = R.drawable.red_bird;
+                break;
+            case "blue":
+                birdDrawableResource = R.drawable.blue_bird;
+                break;
+            case "yellow":
+                birdDrawableResource = R.drawable.yellow_bird;
+                break;
+        }
+
+        for (int birdImageViewId : birdImageViews) {
+            ImageView imageView = findViewById(birdImageViewId);
+            if (imageView != null) {
+                imageView.setImageResource(birdDrawableResource);
+            }
+        }
+
 
         imageArray.add(binding.bird1);
         imageArray.add(binding.bird2);
@@ -76,7 +146,7 @@ public class GameScreen extends AppCompatActivity {
 
         hideImages();
 
-        new CountDownTimer(15500, 1000) {
+        new CountDownTimer(time * 1000L, 1000) {
             @Override
             public void onFinish() {
                 binding.timeCounter.setText("Time: 0");
@@ -86,23 +156,24 @@ public class GameScreen extends AppCompatActivity {
                     image.setVisibility(View.INVISIBLE);
                 }
 
-                AlertDialog.Builder alert = new AlertDialog.Builder(GameScreen.this);
-                alert.setTitle("Game Over");
-                alert.setMessage("Restart The Game?");
-                alert.setPositiveButton("Yes", (dialog, which) -> {
-                    Intent intent = getIntent();
-                    finish();
-                    startActivity(intent);
-                });
+                if (!isFinishing()) {
+                    AlertDialog.Builder alert = new AlertDialog.Builder(GameScreen.this);
+                    alert.setTitle("Game Over");
+                    alert.setMessage("Restart The Game?");
+                    alert.setPositiveButton("Yes", (dialog, which) -> {
+                        Intent intent = getIntent();
+                        finish();
+                        startActivity(intent);
+                    });
 
+                    alert.setNegativeButton("No", (dialog, which) -> {
+                        finish();
+                    });
 
-                alert.setNegativeButton("No", (dialog, which) -> {
-                    finish();
-                });
-
-                alert.show();
-
+                    alert.show();
+                }
             }
+
 
             @Override
             public void onTick(long millisUntilFinished) {
@@ -114,6 +185,13 @@ public class GameScreen extends AppCompatActivity {
 
     public void increaseScore(View view) {
         currentScore++;
+        if (isVibration) {
+            vibrate(this, 80);
+        }
+        if (isSound) {
+            soundPool.play(soundID, 1, 1, 1, 0, 1);
+        }
+
         binding.scoreCounter.setText("Score: " + currentScore);
     }
 
@@ -137,4 +215,12 @@ public class GameScreen extends AppCompatActivity {
         handler.post(runnable);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (soundPool != null) {
+            soundPool.release();
+            soundPool = null;
+        }
+    }
 }
