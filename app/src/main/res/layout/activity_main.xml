@@ -7,55 +7,23 @@
     android:background="@color/color5"
     tools:context=".StartScreen">
 
-    <ImageView
-        android:id="@+id/flappyBirdText"
-        android:layout_width="200dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        app:srcCompat="@drawable/start_photo" />
-
-    <ImageView
-        android:id="@+id/flappyRight"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/flappyBirdText"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="-25dp"
-        android:layout_marginEnd="30dp"
-        android:rotation="-32"
-        android:rotationY="12"
-        app:srcCompat="@drawable/red_bird" />
-
-    <ImageView
-        android:id="@+id/flappyLeft"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/flappyBirdText"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="-25dp"
-        android:rotation="-32"
-        android:rotationY="-172"
-        app:srcCompat="@drawable/red_bird" />
 
     <ImageView
         android:id="@+id/birdLogo"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_below="@id/flappyBirdText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/giris" />
+        android:src="@drawable/catch_flappy2" />
 
     <ImageView
         android:id="@+id/levelOfDifficultyText"
         android:layout_width="170dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@id/birdLogo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        app:srcCompat="@drawable/enter_level_text" />
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="-10dp"
+        app:srcCompat="@drawable/level_diff" />
 
 
     <LinearLayout
@@ -64,7 +32,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/levelOfDifficultyText"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/easyButton"
@@ -107,12 +77,13 @@
             app:cardElevation="5dp"
 
             app:cardPreventCornerOverlap="true"
-            app:strokeColor="@color/color1"
+            app:strokeColor="@color/black"
             app:strokeWidth="3dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:text="Medium"
@@ -151,40 +122,73 @@
 
     </LinearLayout>
 
-
-    <TextView
-        android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/chooseBirdText"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_below="@id/difficultiesLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/choose_bird" />
+
+
+    <LinearLayout
+        android:id="@+id/birdsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chooseBirdText"
+        android:orientation="horizontal"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp">
+
+        <ImageView
+            android:id="@+id/redBird"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:src="@drawable/red_bird" />
+
+
+        <ImageView
+            android:id="@+id/yellowBird"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:src="@drawable/yellow_bird_selected" />
+
+        <ImageView
+            android:id="@+id/blueBird"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:src="@drawable/blue_bird" />
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/startButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/birdsLayout"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:fontFamily="cursive"
-        android:padding="15dp"
-        android:text="START"
         android:onClick="startGame"
+        android:src="@drawable/start"
+        android:text="START"
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold" />
 
-    <TextView
+    <ImageView
         android:id="@+id/bestScoresText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
         android:layout_below="@id/startButton"
-        android:gravity="start"
-        android:padding="15dp"
-        android:text="Best Scores"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/bugra"
-        android:layout_below="@id/bestScoresText" />
+        android:layout_marginStart="5dp"
+        android:src="@drawable/best_score" />
 
     <ImageView
         android:id="@+id/bugra"
