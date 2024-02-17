@@ -9,6 +9,8 @@ a flappy-bird-inspired game I wrote in java
 </div>
 
 <div align="center">
-	![Alt Text](https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/catchFlappy.gif)
+  <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/catchFlappy.gif" style="margin-right: 20px;" width="250" alt="Screenshot BB">
 </div>
 
+
+![Alt Text](https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/catchFlappy.gif)
