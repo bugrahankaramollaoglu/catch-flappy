@@ -2,22 +2,16 @@
 
 a flappy-bird-inspired game I wrote in java
 
-<div style="display: flex; justify-content: center; align-items: center;">
+<div style="text-align: center;">
 
-  <!-- Left column for bb.jpeg -->
-  <div style="flex: 1; text-align: center;">
-    <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/bb.jpeg" style="margin-right: 20px;" width="250" alt="Screenshot BB">
-  </div>
+  <!-- bb.jpeg -->
+  <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/bb.jpeg" style="display: inline-block; margin-right: 20px;" width="250" alt="Screenshot BB">
 
-  <!-- Center column for catchFlappy.gif -->
-  <div style="flex: 1; text-align: center;">
-    <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/catchFlappy.gif" width="250" alt="Catch Flappy Demo">
-  </div>
+  <!-- catchFlappy.gif -->
+  <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/catchFlappy.gif" style="display: inline-block; margin-right: 20px; margin-left: 20px;" width="250" alt="Catch Flappy Demo">
 
-  <!-- Right column for cc.jpeg -->
-  <div style="flex: 1; text-align: center;">
-    <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/cc.jpeg" style="margin-left: 20px;" width="250" alt="Screenshot CC">
-  </div>
+  <!-- cc.jpeg -->
+  <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/cc.jpeg" style="display: inline-block; margin-left: 20px;" width="250" alt="Screenshot CC">
 
 </div>
 
