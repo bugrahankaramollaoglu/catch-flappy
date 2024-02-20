@@ -2,7 +2,9 @@ package com.bugrahankaramollaoglu.catchflappy_app;
 
 import static com.bugrahankaramollaoglu.catchflappy_app.VibrationHelper.vibrate;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -11,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -37,6 +40,8 @@ public class StartScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        SharedPreferences sharedPreferences = getSharedPreferences("BEST_SCORE_SHARED", Context.MODE_PRIVATE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             AudioAttributes audioAttributes = new AudioAttributes.Builder()
@@ -81,7 +86,8 @@ public class StartScreen extends AppCompatActivity {
 
                 if (isVibration) {
                     vibrate(getApplicationContext(), 80);
-                }            }
+                }
+            }
         });
 
         binding.redBird.setOnClickListener(new View.OnClickListener() {
@@ -170,6 +176,13 @@ public class StartScreen extends AppCompatActivity {
             }
         });
 
+        binding.score.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int best_score = sharedPreferences.getInt("best-score", 0);
+                Toast.makeText(getApplicationContext(), "BEST SCORE: " + best_score + "!", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     public void setEasy(View view) {

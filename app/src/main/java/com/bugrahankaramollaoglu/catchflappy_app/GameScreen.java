@@ -2,7 +2,9 @@ package com.bugrahankaramollaoglu.catchflappy_app;
 
 import static com.bugrahankaramollaoglu.catchflappy_app.VibrationHelper.vibrate;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -31,6 +33,7 @@ public class GameScreen extends AppCompatActivity {
 
     private String selectedBird = "yellow";
     private int time = 15;
+    private int bestScore = 0;
     private boolean isVibration = true;
     private boolean isSound = true;
     int difficulty = 500;
@@ -48,6 +51,10 @@ public class GameScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityGameScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        SharedPreferences sharedPreferences = getSharedPreferences("BEST_SCORE_SHARED", Context.MODE_PRIVATE);
+
+        bestScore = sharedPreferences.getInt("best-score", 0);
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -159,6 +166,18 @@ public class GameScreen extends AppCompatActivity {
                     AlertDialog.Builder alert = new AlertDialog.Builder(GameScreen.this);
                     alert.setTitle("Game Over");
                     alert.setMessage("Restart The Game?");
+
+                    /* ****** */
+
+                    if (currentScore > bestScore) {
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putInt("best-score", currentScore);
+                        editor.apply();
+                    }
+
+                    /* ****** */
+
+
                     alert.setPositiveButton("Yes", (dialog, which) -> {
                         Intent intent = getIntent();
                         finish();
