@@ -11,15 +11,17 @@ a flappy-bird-inspired game I wrote in java
 * Splashes
 * Modifiable configurations (sound/vibration)
 
-<div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; padding: 5px;">
-    <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/graphics/11.png" style="max-width: 100%; height: auto;" />
+<div style="display: flex;">
+  <div style="flex: 50%; padding: 5px;">
+    <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/graphics/11.png" width="200" />
+    <img src="https://github.com/bugrahankaramollaoglu/SentenSearch/blob/main/graphics/2.png" width="200" />
+    <img src="https://github.com/bugrahankaramollaoglu/SentenSearch/blob/main/graphics/3.png" width="200" />
+
   </div>
-  <div style="flex: 1; padding: 5px;">
-    <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/graphics/2.png" style="max-width: 100%; height: auto;" />
-  </div>
-  <div style="flex: 1; padding: 5px;">
-    <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/graphics/3.png" style="max-width: 100%; height: auto;" />
+  <div style="flex: 50%; padding: 5px;">
+    <img src="https://github.com/bugrahankaramollaoglu/SentenSearch/blob/main/graphics/14.png" width="200" />
+    <img src="https://github.com/bugrahankaramollaoglu/SentenSearch/blob/main/graphics/12.png" width="200" />
+    <img src="https://github.com/bugrahankaramollaoglu/SentenSearch/blob/main/graphics/10.png" width="200" />
+    <img src="https://github.com/bugrahankaramollaoglu/SentenSearch/blob/main/graphics/8.png" width="200" />
   </div>
 </div>
-
