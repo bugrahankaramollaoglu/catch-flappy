@@ -17,11 +17,4 @@ a flappy-bird-inspired game I wrote in java
     <img src="https://github.com/bugrahankaramollaoglu/SentenSearch/blob/main/graphics/2.png" width="200" />
     <img src="https://github.com/bugrahankaramollaoglu/SentenSearch/blob/main/graphics/3.png" width="200" />
 
-  </div>
-  <div style="flex: 50%; padding: 5px;">
-    <img src="https://github.com/bugrahankaramollaoglu/SentenSearch/blob/main/graphics/14.png" width="200" />
-    <img src="https://github.com/bugrahankaramollaoglu/SentenSearch/blob/main/graphics/12.png" width="200" />
-    <img src="https://github.com/bugrahankaramollaoglu/SentenSearch/blob/main/graphics/10.png" width="200" />
-    <img src="https://github.com/bugrahankaramollaoglu/SentenSearch/blob/main/graphics/8.png" width="200" />
-  </div>
 </div>
