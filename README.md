@@ -13,7 +13,7 @@ a flappy-bird-inspired game I wrote in java
 
 <div style="display: flex; justify-content: space-between;">
   <div style="flex: 1; padding: 5px;">
-    <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/graphics/1.png" style="max-width: 100%; height: auto;" />
+    <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/graphics/11.png" style="max-width: 100%; height: auto;" />
   </div>
   <div style="flex: 1; padding: 5px;">
     <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/graphics/2.png" style="max-width: 100%; height: auto;" />
