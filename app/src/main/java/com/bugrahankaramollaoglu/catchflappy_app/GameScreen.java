@@ -49,6 +49,7 @@ public class GameScreen extends AppCompatActivity {
         binding = ActivityGameScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             AudioAttributes audioAttributes = new AudioAttributes.Builder()
                     .setUsage(AudioAttributes.USAGE_GAME)
@@ -64,7 +65,6 @@ public class GameScreen extends AppCompatActivity {
         }
         soundID = soundPool.load(this, R.raw.ding, 1);
 
-
         intent = getIntent();
 
         if (intent != null && intent.hasExtra("difficulty-level")) {
@@ -76,7 +76,6 @@ public class GameScreen extends AppCompatActivity {
         } else {
             // Handle the case when the "difficulty-level" extra is not found
         }
-
 
         binding.goBackArrow.setOnClickListener(new View.OnClickListener() {
             @Override
