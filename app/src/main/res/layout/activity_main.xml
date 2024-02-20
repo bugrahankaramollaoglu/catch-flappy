@@ -347,5 +347,32 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/score"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@id/sound"
+        android:clickable="true"
+        android:onClick="setEasy"
+        app:cardBackgroundColor="@color/white2"
+        app:cardCornerRadius="10dp"
+        app:cardPreventCornerOverlap="true"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp">
+
+        <ImageView
+            android:id="@+id/scoreImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:padding="12dp"
+            android:src="@drawable/score" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
 
 </RelativeLayout>

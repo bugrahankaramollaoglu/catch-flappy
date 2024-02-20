@@ -32,7 +32,6 @@ public class StartScreen extends AppCompatActivity {
 
     Intent intent;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
