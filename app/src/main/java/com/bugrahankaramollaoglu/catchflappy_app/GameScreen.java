@@ -30,7 +30,6 @@ public class GameScreen extends AppCompatActivity {
     private SoundPool soundPool;
     private int soundID;
 
-
     private String selectedBird = "yellow";
     private int time = 15;
     private int bestScore = 0;
