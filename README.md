@@ -29,4 +29,4 @@
 
 | Splash Screen | Home Screen | Game Screen | 
 | ----------- | ----------- | ----------------
-| ![Splash Screen](https://github.com/bugrahankaramollaoglu/catch-flappy/readme_files/photo_1.png) | ![Login Screen](https://github.com/bugrahankaramollaoglu/catch-flappy/readme_files/photo_2.png) | ![Register Screen](https://github.com/bugrahankaramollaoglu/catch-flappy/readme_files/photo_3.png) 
+| ![Splash Screen](https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/readme_files/photo_1.png) | ![Login Screen](https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/readme_files/photo_2.png) | ![Register Screen](https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/readme_files/photo_3.png) 
