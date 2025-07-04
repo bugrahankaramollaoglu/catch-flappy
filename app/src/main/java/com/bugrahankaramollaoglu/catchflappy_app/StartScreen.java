@@ -65,7 +65,6 @@ public class StartScreen extends AppCompatActivity {
             }
         });
 
-
         binding.yellowBird.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

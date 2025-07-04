@@ -13,7 +13,6 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        // Example of setting a timer to open the main activity after 3 seconds
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

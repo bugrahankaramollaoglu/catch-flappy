@@ -1,4 +1,6 @@
-# catch-flappy
+<h1 align="center">
+     Catch Flappy
+</h1>
 
 ![asd](https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/graphics/catch_flappy_header.png)
 
@@ -10,9 +12,21 @@
 * Modifiable configurations (sound/vibration).
 * Keeps track of the best score.
 
-<div style="display: flex;">
-  <div style="flex: 50%; padding: 5px;">
-    <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/graphics/1.png" width="250" />
-    <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/graphics/2.png" width="250" />
-    <img src="https://github.com/bugrahankaramollaoglu/catch-flappy/blob/main/graphics/3.png" width="250" />
-</div>
+
+<h1 align="center">
+     Catch Flappy
+</h1>
+
+## Description
+<p>"Catch Flappy" is my first-ever app, written in Java. It makes use of asynchronous programming in Java using runnable methods. </p>
+
+## Technologies and Libraries
+- Shared Preferences
+- Threads
+- Runnable
+
+## Screenshots
+
+| Splash Screen | Home Screen | Game Screen | 
+| ----------- | ----------- | ----------------
+| ![Splash Screen](https://github.com/bugrahankaramollaoglu/catch-flappy/readme_files/photo_1.png) | ![Login Screen](https://github.com/bugrahankaramollaoglu/catch-flappy/readme_files/photo_2.png) | ![Register Screen](https://github.com/bugrahankaramollaoglu/catch-flappy/readme_files/photo_3.png) 

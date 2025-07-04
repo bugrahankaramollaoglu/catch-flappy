@@ -127,7 +127,6 @@ public class GameScreen extends AppCompatActivity {
             }
         }
 
-
         imageArray.add(binding.bird1);
         imageArray.add(binding.bird2);
         imageArray.add(binding.bird3);
